@@ -39,7 +39,7 @@ export const ThemeCustomProvider = ({ children }) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ setNewTheme }}>
+    <ThemeContext.Provider value={{ setNewTheme, currentTheme: theme }}>
       <ThemeProvider theme={theme}>{children}</ThemeProvider>
     </ThemeContext.Provider>
   );

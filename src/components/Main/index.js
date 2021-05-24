@@ -10,6 +10,7 @@ const Main = ({ children }) => {
       <HeaderBar />
       <div className={classes.whiteSpace}></div>
       {children}
+      <canvas id={classes.bg}></canvas>
     </div>
   );
 };

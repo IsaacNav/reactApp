@@ -6,9 +6,9 @@ import {
 } from '../providers/ThemeProvider';
 
 const useTheme = () => {
-  const { setNewTheme } = useContext(ThemeContext);
+  const { setNewTheme, currentTheme } = useContext(ThemeContext);
 
-  return { setTheme: setNewTheme, whiteTheme, blackTheme };
+  return { setTheme: setNewTheme, whiteTheme, blackTheme, currentTheme };
 };
 
 export default useTheme;

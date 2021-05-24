@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Container } from '@material-ui/core';
+import { InvertColors as InvertColorsIcon } from '@material-ui/icons';
 import SwitchTheme from '../../components/SwitchTheme';
 
 import { useStyles } from './style';
@@ -14,6 +15,7 @@ const HeaderBar = () => {
         <div></div>
         <div data-testid="themeSwitch">
           <SwitchTheme />
+          <InvertColorsIcon color="primary" />
         </div>
       </Container>
     </div>

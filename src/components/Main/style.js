@@ -14,6 +14,11 @@ export default makeStyles((theme) => {
     whiteSpace: {
       width: '100%',
       height: hederBarHeight
+    },
+    bg: {
+      position: 'fixed',
+      top: 0,
+      left: 0
     }
   };
 });
