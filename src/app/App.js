@@ -1,23 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { ThemeProvider } from '@material-ui/core/styles';
+import { ThemeCustomProvider } from '../providers/ThemeProvider';
 
 import store from '../store';
-import { ThemeContext } from '../context/ThemeContext';
-import useTheme from '../hooks/useTheme';
-
 import Router from '../router';
 
 const App = () => {
-  const [theme] = useTheme();
-
   return (
     <Provider store={store}>
-      <ThemeContext.Provider value={theme}>
-        <ThemeProvider theme={theme}>
-          <Router />
-        </ThemeProvider>
-      </ThemeContext.Provider>
+      <ThemeCustomProvider>
+        <Router />
+      </ThemeCustomProvider>
     </Provider>
   );
 };

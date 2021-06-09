@@ -1,27 +1,17 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 
 import { Container, Typography } from '@material-ui/core';
-
-import useTheme from '../../hooks/useTheme';
-import useStyles from './style';
+import Main from '../../components/Main';
 
 const Home = () => {
-  const [theme, setTheme] = useTheme();
-  const classes = useStyles();
-
-  const handleOnClick = useCallback(() => {
-    const currentTheme = theme;
-    currentTheme.palette.primary.main = '#ffff';
-    currentTheme.palette.secondary.main = '#0000';
-
-    setTheme({ ...currentTheme });
-  }, [theme, setTheme]);
-
   return (
-    <Container className={classes.root}>
-      <Typography variant="h1">App Contanier</Typography>
-      <button onClick={handleOnClick}>Cambar tema</button>
-    </Container>
+    <Main>
+      <Container>
+        <Typography variant="h1" color="primary">
+          App Contanier
+        </Typography>
+      </Container>
+    </Main>
   );
 };
 
