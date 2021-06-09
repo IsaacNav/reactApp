@@ -1,20 +1,14 @@
-import { useState, useCallback } from 'react';
-import { theme } from '../context/ThemeContext';
+import { useContext } from 'react';
+import {
+  ThemeContext,
+  whiteTheme,
+  blackTheme
+} from '../providers/ThemeProvider';
 
 const useTheme = () => {
-  const [appTheme, setAppTheme] = useState(theme);
+  const { setNewTheme, currentTheme } = useContext(ThemeContext);
 
-  const setTheme = useCallback((newTheme) => {
-    console.log(newTheme);
-    if (newTheme instanceof Object) {
-      setAppTheme(newTheme);
-      const stringifyTheme = JSON.stringify(newTheme);
-      window.localStorage.setItem('theme', stringifyTheme);
-    }
-    return null;
-  });
-
-  return [appTheme, setTheme];
+  return { setTheme: setNewTheme, whiteTheme, blackTheme, currentTheme };
 };
 
 export default useTheme;
