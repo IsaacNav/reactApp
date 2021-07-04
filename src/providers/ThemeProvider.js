@@ -30,11 +30,39 @@ export const blackTheme = {
 
 export const ThemeContext = createContext();
 
+const generateTheme = (colorTheme) => {
+  let theme = createMuiTheme(colorTheme);
+  theme.colorPalette = {
+    pink: '#FF4081',
+    green: '#CDDC39',
+    black: '#212121'
+  };
+  theme.typography.h1 = Object.assign(theme.typography.h1, {
+    fontSize: '3rem',
+    '@media (min-width:600px)': {
+      fontSize: '3rem'
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '3.75rem'
+    }
+  });
+  theme.typography.h2 = Object.assign(theme.typography.h2, {
+    fontSize: '2.8rem',
+    '@media (min-width:600px)': {
+      fontSize: '2.8rem'
+    },
+    [theme.breakpoints.up('md')]: {
+      fontSize: '3rem'
+    }
+  });
+  return theme;
+};
+
 export const ThemeCustomProvider = ({ children }) => {
-  const [theme, setTheme] = useState(createMuiTheme(whiteTheme));
+  const [theme, setTheme] = useState(generateTheme(whiteTheme));
 
   const setNewTheme = (props) => {
-    const newTheme = createMuiTheme(props);
+    const newTheme = generateTheme(props);
     setTheme(newTheme);
   };
 

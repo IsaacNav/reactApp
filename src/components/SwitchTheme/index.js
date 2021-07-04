@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import { Switch } from '@material-ui/core';
-import useTheme from '../../hooks/useTheme';
+import useTheme from 'hooks/useTheme';
 
 const SwitchTheme = ({ onClick }) => {
   const { setTheme, whiteTheme, blackTheme } = useTheme();

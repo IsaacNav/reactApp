@@ -7,8 +7,8 @@ const Home = () => {
   return (
     <Main>
       <Container>
-        <Typography variant="h1" color="primary">
-          App Contanier
+        <Typography variant="h2" color="primary">
+          content
         </Typography>
       </Container>
     </Main>

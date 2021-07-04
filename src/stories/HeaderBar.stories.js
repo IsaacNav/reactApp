@@ -3,16 +3,16 @@ import React from 'react';
 import ConvineProviders from '../providers/ConvineProviders';
 import HeaderBar from '../components/HeaderBar';
 
-//👇 We create a “template” of how args map to rendering
-const Template = (args) => (
-  <ConvineProviders>
-    <HeaderBar {...args} />
-  </ConvineProviders>
-);
-
-export const Primary = Template;
+export { HeaderBar as header };
 
 export default {
-  title: 'Components/HeaderBar',
-  component: HeaderBar
+  title: 'components/Base/HeaderBar',
+  component: HeaderBar,
+  decorators: [
+    (Story) => (
+      <ConvineProviders>
+        <Story />
+      </ConvineProviders>
+    )
+  ]
 };
